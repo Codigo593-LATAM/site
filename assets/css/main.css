@@ -137,12 +137,13 @@ section {
 }
 
 .breadcrumbs nav ol a {
-  color: var(--color-primary);
+  color:#C70039;
   transition: 0.3s;
 }
 
 .breadcrumbs nav ol a:hover {
   text-decoration: underline;
+  color: #1976D2;
 }
 
 .breadcrumbs nav ol li+li {
@@ -180,7 +181,7 @@ section {
 }
 
 .scroll-top:hover {
-  background: rgba(25,118,210, 0.8);
+  background:  #1976D2;
   color: #fff;
 }
 
@@ -1131,7 +1132,7 @@ section {
   color: #1976D2;
 }
 .portfolio .portfolio-flters li.filter-active {
-  color: #C70039;
+  color: #C70039;1976D2
 }
 
 .portfolio .portfolio-flters li:first-child {
@@ -1288,14 +1289,14 @@ section {
 
 .portfolio-details .portfolio-info .btn-visit {
   padding: 8px 40px;
-  background: var(--color-primary);
+  background: #C70039;
   color: #fff;
   border-radius: 50px;
   transition: 0.3s;
 }
 
 .portfolio-details .portfolio-info .btn-visit:hover {
-  background: #009d8b;
+  background:#1976D2;
 }
 
 .portfolio-details .portfolio-description h2 {
