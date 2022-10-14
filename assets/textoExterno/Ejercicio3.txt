@@ -1,0 +1,35 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+
+int potencia(int, int);
+int multiplicacion(int, int);
+int multiplicacion(int num1, int num2){
+    int suma = 0;
+    for (int i = 0;i< num2; i++){
+        suma = suma + num1;
+    }
+    return suma;
+}
+potencia (int num, int pot){
+    int suma = 0;
+    if (pot == 0){
+         return 1;
+     }
+    else{
+         //return potencia(num, pot-1) * num;
+         return multiplicacion(potencia(num, pot-1) , num);
+     }
+}
+int main() {
+    // Write C code here
+    int num, pot, res;
+    printf("Ingrese base: ");
+    scanf("%i", &num);
+    printf("\nIngrese exponente: ");
+    scanf("%i", &pot);
+    res = potencia(num,pot);
+    printf("%i", res);
+
+    return 0;
+}
