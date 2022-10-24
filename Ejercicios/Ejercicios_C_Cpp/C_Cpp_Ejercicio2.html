@@ -96,53 +96,41 @@
               <h3>Código</h3>
               <pre class="c language-c" data-line="6, 7, 8, 9, 10">
 <code>#include&ltmath.h&gt
+#include&ltstdio.h&gt
 int main(){
     float Ax, Ay, Bx, By, Cx, Cy1, Cy2, Cy;
     float AB, AC, BC;
     float a,b,c;
-    Ax = 1.; Ay = 1.;
-    Bx = 8.; By = 2.;
-    printf(Ingrese Punto A);
-    printf(nAx );
-    scanf(%f, &Ax);
-    printf(nAy );
-    scanf(%f, &Ay);
+    //Ax = 1.; Ay = 1.;
+    //Bx = 8.; By = 2.;
+    printf("Ingrese Punto A");
+    printf("\nAx: ");
+    scanf("%f", &Ax);
+    printf("\nAy: " );
+    scanf("%f", &Ay);
 
-    printf(Ingrese Punto B);
-    printf(nBx );
-    scanf(%f, &Bx);
-    printf(nBy );
-    scanf(%f, &By);
-    La distancias AB, AC, BC son las mismas
+    printf("Ingrese Punto B");
+    printf("\nBx");
+    scanf("%f", &Bx);
+    printf("\nBy" );
+    scanf("%f", &By);
+    //La distancias AB, AC, BC son las mismas
     AB = pow(pow(Bx - Ax,2)+pow(By-Ay,2), 0.5);
     AC = pow(pow(Cx - Ax,2)+pow(Cy-Ay,2), 0.5);
-    pow(AC,2) = pow(Cx - Ax,2)+pow(Cy-Ay,2)
-    pow(AC,2) = pow(Cx,2) -2CxAx +pow(Ax,2)+pow(Cy,2)-2CyAy+pow(Ay,2)
-
-    BC = pow(pow(Cx - Bx,2)+pow(Cy-By,2), 0.5);
-    pow(BC,2) = pow(Cx,2) -2CxBx +pow(Bx,2)+pow(Cy,2)-2CyBy+pow(By,2)
-
-    (1) pow(AC,2) = pow(Cx,2) -2CxAx +pow(Ax,2)+pow(Cy,2)-2CyAy+pow(Ay,2)
-    (2) pow(BC,2) = pow(Cx,2) -2CxBx +pow(Bx,2)+pow(Cy,2)-2CyBy+pow(By,2)
-
-    2-1
-    pow(BC,2)-pow(AC,2)= -2CxBx +2CxAx +pow(Bx,2)-pow(Ax,2) -2CyBy+pow(By,2)+2CyAy+pow(Ay,2)
-    0= -2CxBx +2CxAx +pow(Bx,2)-pow(Ax,2) -2CyBy+pow(By,2)+2CyAy+pow(Ay,2)
-
-    ...
-    a = pow((-2By+2Ay)(-2Bx+2Ax),2)+1;
-    b = (-2(pow(Ay,2)-pow(By,2)+pow(Ax,2)-pow(Bx,2))(-2By+2Ay))(pow(-2Bx+2Ax,2))+2Bx(-2By+2Ay)(-2Bx+2Ax)-2By;
-    c = pow((pow(Ay,2)-pow(By,2)+pow(Ax,2)-pow(Bx,2))(-2Bx+2Ax),2)-2Bx(pow(Ay,2)-pow(By,2)+pow(Ax,2)-pow(Bx,2))(-2Bx+2Ax)+pow(Bx,2)+pow(By,2)-pow(AB,2);
-    Cy1 = (-b+pow(pow(b,2)-4ac,0.5))(2a);
-    Cy2 = (-b-pow(pow(b,2)-4ac,0.5))(2a);
-    if(Cy1=Cy2){
+    
+    a = pow((-2*By+2*Ay)/(-2*Bx+2*Ax),2)+1;
+    b = (-2*(pow(Ay,2)-pow(By,2)+pow(Ax,2)-pow(Bx,2))*(-2*By+2*Ay))/(pow(-2*Bx+2*Ax,2))+2*Bx*(-2*By+2*Ay)/(-2*Bx+2*Ax)-2*By;
+    c = pow((pow(Ay,2)-pow(By,2)+pow(Ax,2)-pow(Bx,2))/(-2*Bx+2*Ax),2)-2*Bx*(pow(Ay,2)-pow(By,2)+pow(Ax,2)-pow(Bx,2))/(-2*Bx+2*Ax)+pow(Bx,2)+pow(By,2)-pow(AB,2);
+    Cy1 = (-b+pow(pow(b,2)-4*a*c,0.5))/(2*a);
+    Cy2 = (-b-pow(pow(b,2)-4*a*c,0.5))/(2*a);
+    if(Cy1>=Cy2){
         Cy = Cy1;
     }else{
         Cy = Cy2;
     }
-    Cx = (pow(Ay,2)-pow(By,2)-Cy(-2By+2Ay)+pow(Ax,2)-pow(Bx,2))(-2Bx+2Ax);
-    printf(nC [%.2f , %.2f], Cx, Cy);
-    printf(nlado %.2f, AB);
+    Cx = (pow(Ay,2)-pow(By,2)-Cy*(-2*By+2*Ay)+pow(Ax,2)-pow(Bx,2))/(-2*Bx+2*Ax);
+    printf("\nC [%.2f , %.2f]", Cx, Cy);
+    printf("\nlado %.2f", AB);
     return 0;
 }</code>
             </pre>
